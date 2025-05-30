@@ -3,29 +3,58 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Info Percetakan (PWA)</title>
-  <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#182946" />
-  <link rel="stylesheet" href="cetalink.css" />
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('service-worker.js')
-          .then(reg => console.log('SW registered', reg))
-          .catch(err => console.error('SW registration failed', err));
-      });
-    }
-  </script>
-</head>
+  <title>Cetalink</title>
+  <link rel="stylesheet" href="cetalink.css"/>
+  </head>
 <body>
   <header>
-    <img src="logo-192.png" alt="Logo" class="logo">
-    <h1>Selamat Datang di Info Percetakan</h1>
+    <img
+        src="LOGO OKE + TULISAN-02.png"
+        alt="Company Logo"
+        class="logo"
+    />
+    <h1>Satu Link Untuk Semua Kebutuhan Cetak</h1>
+    <nav>
+      <a href="#services">Layanan</a>
+      <a href="#order">Pesan Cetak</a>
+      <a href="#contact">Kontak</a>
+    </nav>
   </header>
   <section class="hero">
-    <h2>Cetak Mudah, Cepat, Profesional</h2>
-    <p>Kini tersedia dalam bentuk aplikasi di ponsel Anda.</p>
-    <a href="#" class="btn-primary">Mulai</a>
+    <h2>Efisien Terpercaya Fleksibel Solutif</h2>
+    <p>Menyediakan layanan cetak berkualitas tinggi dengan harga terjangkau. Mulai cetak apapun yang Anda butuhkan dengan mudah dan cepat.</p>
+    <a href="#order" class="btn-primary">Pesan Sekarang</a>
   </section>
+<section class="services" id="services">
+    <h3>Layanan Kami</h3>
+    <div class="service-cards">
+      <div class="card">
+        <div class="button-container">
+        <button class="my-button" onclick="location.href='cetakoffset.html'">Click Here</button>
+        </div>
+        <h4>Cetak Offset</h4>
+        <p>Cetalink melayani cetak offset untuk berbagai kebutuhan bisnis dari brosur, katalog, kemasan, hingga kop surat dan nota. Warna tajam, konsisten, dan hemat untuk volume tinggi. Cocok untuk perusahaan yang butuh hasil cetak berkualitas dalam jumlah banyak.</p>
+      </div>
+      <div class="card">
+        <button class="my-button" onclick="location.href='cetakdigital.html'">Click Here</button>
+        <h4>Cetak Digital</h4>
+        <p>Cetak cepat dan ekonomis untuk kebutuhan jumlah kecil seperti undangan, poster, dan kartu nama.</p>
+      </div>
+      <div class="card">
+        <button class="my-button" onclick="location.href='cetakcustom.html'">Click Here</button>
+        <h4>Design Custom</h4>
+        <p>Layanan desain kreatif untuk mendukung cetakan Anda agar tampil menarik dan profesional.</p>
+      </div>
+    </div>
+  </section>
+  <section id="order" style="text-align:center; padding: 3rem 2rem; max-width: 700px; margin: 0 auto;">
+    <h3>Mulai Pesan Cetak Anda</h3>
+    <p>Hubungi kami untuk konsultasi dan pemesanan.</p>
+    <a href="mailto:infocetalink@gmail.com" class="btn-primary">Kirim Email Pesanan</a>
+    <a href="https://wa.me/6282113788660" class="btn-primary">KONSULTASI PESANAN</a> 
+  </section>
+  <footer id="contact">
+    <p>© 2024 Percetakan Maju - Jl. Cetak No. 123, Jakarta - Telp: (021) 555 1234 - Email: @infocetalink</p>
+  </footer>
 </body>
 </html>
