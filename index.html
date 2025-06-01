@@ -4,9 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Cetalink</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="cetalink.css"/>
   </head>
 <body>
+  <body class="flex flex-col min-h-screen">
   <header>
     <img
         src="LOGO OKE + TULISAN-02.png"
@@ -23,39 +25,79 @@
   <section class="hero">
     <h2>Efisien Terpercaya Fleksibel Solutif</h2>
     <p>Menyediakan layanan cetak berkualitas tinggi dengan harga terjangkau. Mulai cetak apapun yang Anda butuhkan dengan mudah dan cepat.</p>
-    <a href="#order" class="btn-primary">Pesan Sekarang</a>
+    <button class="btn-utama" onclick="openModal()">Pesan Sekarang</button>
   </section>
 <section class="services" id="services">
     <h3>Layanan Kami</h3>
     <div class="service-cards">
       <div class="card">
         <div class="button-container">
-        <button class="my-button" onclick="location.href='cetakoffset.html'">Click Here</button>
+        <button class="btn-utama" onclick="location.href='cetakoffset.html'">Click Here</button>
         </div>
         <h4>Cetak Offset</h4>
         <p>Cetalink melayani cetak offset untuk berbagai kebutuhan bisnis dari brosur, katalog, kemasan, hingga kop surat dan nota. Warna tajam, konsisten, dan hemat untuk volume tinggi. Cocok untuk perusahaan yang butuh hasil cetak berkualitas dalam jumlah banyak.</p>
       </div>
       <div class="card">
-        <button class="my-button" onclick="location.href='cetakdigital.html'">Click Here</button>
+        <button class="btn-utama" onclick="location.href='cetakdigital.html'">Click Here</button>
         <h4>Cetak Digital</h4>
         <p>Cetak cepat dan ekonomis untuk kebutuhan jumlah kecil seperti undangan, poster, dan kartu nama.</p>
       </div>
       <div class="card">
-        <button class="my-button" onclick="location.href='cetakcustom.html'">Click Here</button>
+        <button class="btn-utama" onclick="location.href='cetakcustom.html'">Click Here</button>
         <h4>Design Custom</h4>
         <p>Layanan desain kreatif untuk mendukung cetakan Anda agar tampil menarik dan profesional.</p>
       </div>
     </div>
+   <section class="keunggulan py-10">
+  <h3 class="text-2xl font-bold mb-6">Kenapa Memilih Cetalink?</h3>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div class="bg-white p-4 rounded-lg shadow">
+      <h4 class="font-semibold">Harga Terjangkau</h4>
+      <p>Cetak berkualitas tanpa menguras anggaran.</p>
+    </div>
+    <div class="bg-white p-4 rounded-lg shadow">
+      <h4 class="font-semibold">Proses Cepat</h4>
+      <p>Pengerjaan cepat untuk kebutuhan mendesak.</p>
+    </div>
+    <div class="bg-white p-4 rounded-lg shadow">
+      <h4 class="font-semibold">Desain Gratis</h4>
+      <p>Dapatkan bantuan desain tanpa biaya tambahan.</p>
+    </div>
+    <div class="bg-white p-4 rounded-lg shadow">
+      <h4 class="font-semibold">Layanan Pelanggan</h4>
+      <p>Tim kami siap membantu Anda setiap saat.</p>
+    </div>
+  </div>
+</section>
   </section>
   <section id="order" style="text-align:center; padding: 3rem 2rem; max-width: 700px; margin: 0 auto;">
     <h3>Mulai Pesan Cetak Anda</h3>
     <p>Hubungi kami untuk konsultasi dan pemesanan.</p>
-    <a href="mailto:infocetalink@gmail.com" class="btn-primary">Kirim Email Pesanan</a>
-    <a href="https://wa.me/6282113788660" class="btn-primary">KONSULTASI PESANAN</a> 
+    <a href="mailto:infocetalink@gmail.com" class="btn-utama">Kirim Email Pesanan</a>
+    <a href="https://wa.me/6282113788660" class="btn-utama">KONSULTASI PESANAN</a> 
   </section>
+  <div id="pesanModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+  <div class="bg-white text-[#182946] rounded-xl shadow-lg w-full max-w-md p-6 text-center">
+    <h3 class="text-2xl font-bold mb-2">Mulai Pesan Cetak Anda</h3>
+    <p class="mb-6">Hubungi kami untuk konsultasi dan pemesanan.</p>
+    <div class="space-y-3">
+      <a href="mailto:infocetalink@gmail.com" class="btn-utama block w-full">Kirim Email Pesanan</a>
+      <a href="https://wa.me/6282113788660" class="btn-utama block w-full">Konsultasi Pesanan</a>
+    </div>
+    <button onclick="closeModal()" class="mt-6 text-sm text-gray-600 underline hover:text-gray-900">Tutup</button>
+  </div>
+</div>
   <footer id="contact">
-    <p>© 2024 Percetakan Maju - Jl. Cetak No. 123, Jakarta - Telp: (021) 555 1234 - Email: @infocetalink</p>
+    <p>© 2024 Percetakan Maju - Jl. Cetak No. 123, Jakarta - Telp: +6282113788660 - Email: @infocetalink</p>
   </footer>
+  <script>
+  function openModal() {
+    document.getElementById("pesanModal").classList.remove("hidden");
+  }
+
+  function closeModal() {
+    document.getElementById("pesanModal").classList.add("hidden");
+  }
+</script>
 </body>
 </html>
-
