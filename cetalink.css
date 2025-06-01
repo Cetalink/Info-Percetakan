@@ -81,6 +81,28 @@ nav a:hover {
     background: #ff6b6b;
     box-shadow: 0 6px 15px rgba(233,107,63,0.7);
 }
+.btn-utama {
+  background: #ff6b6b;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: white;
+  border-radius: 40px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 5px 12px rgba(255, 107, 107, 0.5);
+  transition: all 0.3s ease;
+}
+
+.btn-utama:hover {
+  background: #e65b5b;
+  box-shadow: 0 8px 20px rgba(255, 82, 82, 0.7);
+  transform: translateY(-2px);
+}
 
 section.services {
     padding: 3rem 2rem;
