@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="cetalink.css"/>
   </head>
 <body>
+  <body class="flex flex-col min-h-screen">
   <header>
     <img
         src="LOGO OKE + TULISAN-02.png"
@@ -25,7 +26,6 @@
     <h2>Efisien Terpercaya Fleksibel Solutif</h2>
     <p>Menyediakan layanan cetak berkualitas tinggi dengan harga terjangkau. Mulai cetak apapun yang Anda butuhkan dengan mudah dan cepat.</p>
     <button class="btn-primary" onclick="openModal()">Pesan Sekarang</button>
-
   </section>
 <section class="services" id="services">
     <h3>Layanan Kami</h3>
@@ -69,5 +69,14 @@
   <footer id="contact">
     <p>© 2024 Percetakan Maju - Jl. Cetak No. 123, Jakarta - Telp: +6282113788660 - Email: @infocetalink</p>
   </footer>
+  <script>
+  function openModal() {
+    document.getElementById("pesanModal").classList.remove("hidden");
+  }
+
+  function closeModal() {
+    document.getElementById("pesanModal").classList.add("hidden");
+  }
+</script>
 </body>
 </html>
