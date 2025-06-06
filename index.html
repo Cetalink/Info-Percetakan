@@ -28,7 +28,6 @@
   .delay-3 { animation-delay: 0.6s; }
   .delay-4 { animation-delay: 0.8s; }
 </style>
-
   </head>
 <body>
   <body class="flex flex-col min-h-screen">
@@ -124,5 +123,76 @@
     document.getElementById("pesanModal").classList.add("hidden");
   }
 </script>
-</body>
+  <!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cetalink Logo Tilt 3D</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-color: #f9fafb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      font-family: sans-serif;
+    }
+
+    .tilt-container {
+      perspective: 1000px;
+    }
+
+    .tilt-card {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      will-change: transform;
+      transform-style: preserve-3d;
+      background-color: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .tilt-card img {
+      max-width: 250px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .tilt-card h1 {
+      margin-top: 1rem;
+      text-align: center;
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: #1c274c;
+    }
+  </style>
+</head>
+<body>
+  <div class="tilt-container">
+    <div class="tilt-card" id="tiltCard">
+      <img src="LOGO OKE + TULISAN-02.png" alt="Cetalink Logo" />
+      <h1>Cetalink</h1>
+    </div>
+  </div>
+
+  <script>
+    const card = document.getElementById('tiltCard');
+    document.addEventListener('mousemove', (e) => {
+      const { clientX: x, clientY: y } = e;
+      const centerX = window.innerWidth / 2;
+      const centerY = window.innerHeight / 2;
+      const rotateX = -(y - centerY) / 40;
+      const rotateY = (x - centerX) / 40;
+      card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    });
+
+    document.addEventListener('mouseleave', () => {
+      card.style.transform = `rotateX(0deg) rotateY(0deg)`;
+    });
+  </script>
+  </body>
 </html>
