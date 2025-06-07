@@ -61,11 +61,24 @@
     .btn-utama:hover {
       background-color: #ff6b6b;
       box-shadow: 0 8px 20px rgba(255, 82, 82, 0.7);
-
     }
+  
+    .animate-card {
+    opacity: 0;
+    transform: translateY(30px);
+    }
+    
+    .animate-card-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.8s ease-out;
+    }
+    
   </style>
 </head>
 <body class="flex flex-col min-h-screen">
+<body class="flex flex-col min-h-screen scroll-smooth">
+<body class="dark:bg-gray-900 dark:text-white">
 
 <header class="bg-white shadow-md px-6 py-4">
   <div class="flex items-center justify-between">
@@ -78,7 +91,10 @@
       <a href="#order" class="hover:underline">Pesan Cetak</a>
       <a href="#contact" class="hover:underline">Kontak</a>
     </nav>
+    
     <button id="drawer-toggle" class="md:hidden text-[#e65b5b] focus:outline-none">
+    <button onclick="document.documentElement.classList.toggle('dark')">🌓</button>
+
       <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
       </svg>
@@ -223,6 +239,20 @@
   backdrop.addEventListener('click', () => {
     drawer.classList.add('translate-x-full');
     backdrop.classList.add('hidden');
+  });
+
+  const cards = document.querySelectorAll('.animate-card');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+    if (entry.isIntersecting) {
+        entry.target.classList.add('animate-card-visible');
+      }
+    });
+  }, {
+    threshold: 0.2
+  });
+    cards.forEach(card => {
+    observer.observe(card);
   });
 </script>
 </body>
