@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Cetalink</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="cetalink.css"/>
   <style>
     @keyframes fadeSlideUp {
       from {
@@ -26,10 +27,24 @@
     .delay-2 { animation-delay: 0.4s; }
     .delay-3 { animation-delay: 0.6s; }
     .delay-4 { animation-delay: 0.8s; }
+
+    @keyframes rotateIcon {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(90deg);
+      }
+    }
+
+    .rotate-animation {
+      animation: rotateIcon 0.4s ease;
+    }
   </style>
 </head>
 <body class="flex flex-col min-h-screen">
 
+<!-- Header -->
 <header class="bg-white shadow-md px-6 py-4">
   <div class="flex items-center justify-between">
     <!-- Logo + Judul -->
@@ -45,21 +60,21 @@
       <a href="#contact" class="hover:underline">Kontak</a>
     </nav>
 
-    <!-- Hamburger Mobile -->
-    <button id="drawer-toggle" class="md:hidden text-[#182946] focus:outline-none transition-transform duration-300">
-      <svg id="hamburger-icon" class="h-6 w-6 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+    <!-- Hamburger (Mobile) -->
+    <button id="drawer-toggle" class="md:hidden text-[#182946] focus:outline-none">
+      <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
       </svg>
     </button>
   </div>
 
   <!-- Mobile Drawer -->
-  <div id="drawer" class="fixed top-0 right-0 h-full w-64 bg-blue-700 text-white shadow-lg transform translate-x-full transition-transform duration-500 z-50">
+  <div id="drawer" class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform translate-x-full transition-transform duration-500 z-50">
     <div class="p-6 flex flex-col space-y-4">
-      <button id="drawer-close" class="self-end text-2xl text-white">&times;</button>
-      <a href="#services" class="hover:underline">Layanan</a>
-      <a href="#order" class="hover:underline">Pesan Cetak</a>
-      <a href="#contact" class="hover:underline">Kontak</a>
+      <button id="drawer-close" class="self-end text-2xl text-[#182946] hover:text-red-600 transition duration-300">&times;</button>
+      <a href="#services" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-300">Layanan</a>
+      <a href="#order" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-300">Pesan Cetak</a>
+      <a href="#contact" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-300">Kontak</a>
     </div>
   </div>
 
@@ -67,80 +82,80 @@
   <div id="backdrop" class="fixed inset-0 bg-black bg-opacity-50 hidden z-40"></div>
 </header>
 
-<section class="hero px-6 py-12 text-center bg-gray-50">
+<!-- Hero Section -->
+<section class="hero text-center py-10 px-4">
   <h2 class="text-2xl font-bold text-[#182946] mb-4">Efisien Terpercaya Fleksibel Solutif</h2>
-  <p class="text-gray-700 max-w-xl mx-auto mb-6">Menyediakan layanan cetak berkualitas tinggi dengan harga terjangkau. Mulai cetak apapun yang Anda butuhkan dengan mudah dan cepat.</p>
-  <button class="btn-utama bg-blue-600 text-white px-6 py-2 rounded-full" onclick="openModal()">Pesan Sekarang</button>
+  <p class="mb-4 text-gray-700">Menyediakan layanan cetak berkualitas tinggi dengan harga terjangkau. Mulai cetak apapun yang Anda butuhkan dengan mudah dan cepat.</p>
+  <button class="btn-utama bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition" onclick="openModal()">Pesan Sekarang</button>
 </section>
 
+<!-- Services -->
 <section class="services" id="services">
-  <h3 class="text-xl sm:text-2xl font-bold text-center mt-8">Layanan Kami</h3>
+  <h3 class="text-xl sm:text-2xl font-bold text-center mt-8 text-[#182946]">Layanan Kami</h3>
   <div class="service-cards grid grid-cols-1 md:grid-cols-3 gap-6 mt-6 px-4">
     <!-- Card 1 -->
     <div class="card flex flex-col bg-white p-6 rounded-xl shadow h-full">
       <div class="mb-4">
-        <button class="btn-utama w-full bg-blue-600 text-white py-2 rounded-lg" onclick="location.href='cetakoffset.html'">Click Here</button>
+        <button class="btn-utama w-full bg-blue-600 text-white rounded py-2 hover:bg-blue-700" onclick="location.href='cetakoffset.html'">Click Here</button>
       </div>
       <div class="flex-1">
         <h4 class="font-semibold text-lg mb-2">Cetak Offset</h4>
-        <p class="text-sm text-gray-700">
-          Cetak offset untuk brosur, katalog, kemasan, kop surat, dan nota. Warna tajam & hemat untuk volume tinggi.
-        </p>
+        <p class="text-sm text-gray-700">Cetak volume besar seperti brosur, katalog, kemasan, dll. Hemat dan konsisten.</p>
       </div>
     </div>
-
     <!-- Card 2 -->
     <div class="card flex flex-col bg-white p-6 rounded-xl shadow h-full">
       <div class="mb-4">
-        <button class="btn-utama w-full bg-blue-600 text-white py-2 rounded-lg" onclick="location.href='cetakdigital.html'">Click Here</button>
+        <button class="btn-utama w-full bg-blue-600 text-white rounded py-2 hover:bg-blue-700" onclick="location.href='cetakdigital.html'">Click Here</button>
       </div>
       <div class="flex-1">
         <h4 class="font-semibold text-lg mb-2">Cetak Digital</h4>
-        <p class="text-sm text-gray-700">Cetak cepat dan ekonomis untuk undangan, poster, dan kartu nama.</p>
+        <p class="text-sm text-gray-700">Cetak cepat untuk jumlah kecil seperti kartu nama dan undangan.</p>
       </div>
     </div>
-
     <!-- Card 3 -->
     <div class="card flex flex-col bg-white p-6 rounded-xl shadow h-full">
       <div class="mb-4">
-        <button class="btn-utama w-full bg-blue-600 text-white py-2 rounded-lg" onclick="location.href='cetakcustom.html'">Click Here</button>
+        <button class="btn-utama w-full bg-blue-600 text-white rounded py-2 hover:bg-blue-700" onclick="location.href='cetakcustom.html'">Click Here</button>
       </div>
       <div class="flex-1">
         <h4 class="font-semibold text-lg mb-2">Design Custom</h4>
-        <p class="text-sm text-gray-700">Layanan desain kreatif agar cetakan Anda tampil menarik dan profesional.</p>
+        <p class="text-sm text-gray-700">Layanan desain kreatif agar cetakan Anda tampil profesional.</p>
       </div>
     </div>
   </div>
 </section>
 
+<!-- Keunggulan -->
 <section class="keunggulan py-10 px-4 mt-16 bg-[#182946]">
   <h3 class="text-xl sm:text-2xl font-bold mb-6 text-center text-white">Kenapa Memilih Cetalink?</h3>
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-    <div class="bg-white p-6 rounded-xl shadow text-center animate-card delay-1">
-      <h4 class="font-semibold text-blue-600 text-lg mb-2">Harga Terjangkau</h4>
-      <p class="text-gray-700 text-sm">Cetak berkualitas tanpa menguras anggaran.</p>
+    <div class="bg-white p-6 rounded-xl shadow text-center transform hover:scale-105 transition animate-card delay-1">
+      <h4 class="font-semibold text-blue-600 text-lg sm:text-xl mb-2">Harga Terjangkau</h4>
+      <p class="text-gray-700">Cetak berkualitas tanpa menguras anggaran.</p>
     </div>
-    <div class="bg-white p-6 rounded-xl shadow text-center animate-card delay-2">
-      <h4 class="font-semibold text-orange-500 text-lg mb-2">Proses Cepat</h4>
-      <p class="text-gray-700 text-sm">Pengerjaan cepat untuk kebutuhan mendesak.</p>
+    <div class="bg-white p-6 rounded-xl shadow text-center transform hover:scale-105 transition animate-card delay-2">
+      <h4 class="font-semibold text-orange-500 text-lg sm:text-xl mb-2">Proses Cepat</h4>
+      <p class="text-gray-700">Pengerjaan cepat untuk kebutuhan mendesak.</p>
     </div>
-    <div class="bg-white p-6 rounded-xl shadow text-center animate-card delay-3">
-      <h4 class="font-semibold text-green-600 text-lg mb-2">Desain Gratis</h4>
-      <p class="text-gray-700 text-sm">Bantuan desain gratis untuk UMKM.</p>
+    <div class="bg-white p-6 rounded-xl shadow text-center transform hover:scale-105 transition animate-card delay-3">
+      <h4 class="font-semibold text-green-600 text-lg sm:text-xl mb-2">Desain Gratis</h4>
+      <p class="text-gray-700">Bantuan desain gratis untuk UMKM.</p>
     </div>
-    <div class="bg-white p-6 rounded-xl shadow text-center animate-card delay-4">
-      <h4 class="font-semibold text-red-500 text-lg mb-2">Layanan Pelanggan</h4>
-      <p class="text-gray-700 text-sm">Tim kami siap membantu Anda setiap saat.</p>
+    <div class="bg-white p-6 rounded-xl shadow text-center transform hover:scale-105 transition animate-card delay-4">
+      <h4 class="font-semibold text-red-500 text-lg sm:text-xl mb-2">Layanan Pelanggan</h4>
+      <p class="text-gray-700">Tim kami siap membantu Anda setiap saat.</p>
     </div>
-  </div>
+  </div>  
 </section>
 
+<!-- Order Section -->
 <section id="order" class="text-center px-6 py-12 max-w-2xl mx-auto">
-  <h3 class="text-white text-2xl font-semibold mb-4">Mulai Pesan Cetak Anda</h3>
-  <p class="text-white mb-6">Hubungi kami untuk konsultasi dan pemesanan.</p>
+  <h3 class="text-[#182946] text-2xl font-semibold mb-4">Mulai Pesan Cetak Anda</h3>
+  <p class="text-gray-700 mb-6">Hubungi kami untuk konsultasi dan pemesanan.</p>
   <div class="flex flex-col sm:flex-row justify-center gap-4">
-    <a href="mailto:infocetalink@gmail.com" class="btn-utama bg-white text-[#182946] px-4 py-2 rounded-full">Kirim Email Pesanan</a>
-    <a href="https://wa.me/6282113788660" class="btn-utama bg-white text-[#182946] px-4 py-2 rounded-full">Konsultasi Pesanan</a>
+    <a href="mailto:infocetalink@gmail.com" class="btn-utama bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Kirim Email Pesanan</a>
+    <a href="https://wa.me/6282113788660" class="btn-utama bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">KONSULTASI PESANAN</a>
   </div>
 </section>
 
@@ -149,52 +164,53 @@
   <div class="bg-white text-[#182946] rounded-xl shadow-lg w-full max-w-md p-6 text-center">
     <h3 class="text-2xl font-bold mb-2">Mulai Pesan Cetak Anda</h3>
     <p class="mb-6">Hubungi kami untuk konsultasi dan pemesanan.</p>
-    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="mailto:infocetalink@gmail.com" class="btn-utama bg-blue-600 text-white px-4 py-2 rounded-full">Kirim Email Pesanan</a>
-      <a href="https://wa.me/6282113788660" class="btn-utama bg-blue-600 text-white px-4 py-2 rounded-full">Konsultasi Pesanan</a>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center mt-8 sm:mt-6 mb-12 sm:mb-6">
+      <a href="mailto:infocetalink@gmail.com" class="btn-utama bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Kirim Email Pesanan</a>
+      <a href="https://wa.me/6282113788660" class="btn-utama bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">Konsultasi Pesanan</a>
     </div>
     <button onclick="closeModal()" class="mt-6 text-sm text-gray-600 underline hover:text-gray-900">Tutup</button>
   </div>
 </div>
 
-<footer id="contact" class="bg-white py-6 text-center text-sm text-gray-600 mt-auto">
-  <p>© 2024 Percetakan Maju - Jl. Cetak No. 123, Jakarta - Telp: +6282113788660 - Email: infocetalink@gmail.com</p>
+<!-- Footer -->
+<footer id="contact" class="text-center py-6 text-sm text-gray-600 bg-gray-100">
+  © 2024 Percetakan Maju - Jl. Cetak No. 123, Jakarta - Telp: +6282113788660 - Email: infocetalink@gmail.com
 </footer>
 
+<!-- Scripts -->
 <script>
-  // Drawer open/close logic
   const drawerToggle = document.getElementById('drawer-toggle');
   const drawer = document.getElementById('drawer');
   const drawerClose = document.getElementById('drawer-close');
   const backdrop = document.getElementById('backdrop');
-  const hamburgerIcon = document.getElementById('hamburger-icon');
 
   drawerToggle.addEventListener('click', () => {
     drawer.classList.remove('translate-x-full');
     backdrop.classList.remove('hidden');
-    hamburgerIcon.classList.add('rotate-90');
+
+    // animasi ikon
+    drawerToggle.classList.add('rotate-animation');
+    setTimeout(() => drawerToggle.classList.remove('rotate-animation'), 400);
   });
 
   drawerClose.addEventListener('click', () => {
     drawer.classList.add('translate-x-full');
     backdrop.classList.add('hidden');
-    hamburgerIcon.classList.remove('rotate-90');
   });
 
   backdrop.addEventListener('click', () => {
     drawer.classList.add('translate-x-full');
     backdrop.classList.add('hidden');
-    hamburgerIcon.classList.remove('rotate-90');
   });
 
-  // Modal
   function openModal() {
     document.getElementById("pesanModal").classList.remove("hidden");
   }
+
   function closeModal() {
     document.getElementById("pesanModal").classList.add("hidden");
   }
 </script>
-
 </body>
 </html>
+
