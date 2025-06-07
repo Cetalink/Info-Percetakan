@@ -30,19 +30,36 @@
 </style>
   </head>
   <body class="flex flex-col min-h-screen">
-  <header>
-    <img
-        src="LOGO OKE + TULISAN-02.png"
-        alt="Company Logo"
-        class="logo"
-    />
-    <h1>Satu Link Untuk Semua Kebutuhan Cetak</h1>
-    <nav>
-      <a href="#services">Layanan</a>
-      <a href="#order">Pesan Cetak</a>
-      <a href="#contact">Kontak</a>
+<header class="bg-white shadow-md px-6 py-4">
+  <div class="flex items-center justify-between">
+    <!-- Logo + Judul -->
+    <div class="flex items-center space-x-4">
+      <img src="LOGO OKE + TULISAN-02.png" alt="Company Logo" class="h-12 w-auto" />
+      <h1 class="text-[#182946] font-bold text-lg sm:text-xl">Satu Link Untuk Semua Kebutuhan Cetak</h1>
+    </div>
+
+    <!-- Tombol Hamburger (Mobile) -->
+    <button id="menu-toggle" class="md:hidden text-[#182946] focus:outline-none">
+      <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+
+    <!-- Menu Desktop -->
+    <nav class="hidden md:flex space-x-6 text-[#182946]">
+      <a href="#services" class="hover:underline">Layanan</a>
+      <a href="#order" class="hover:underline">Pesan Cetak</a>
+      <a href="#contact" class="hover:underline">Kontak</a>
     </nav>
-  </header>
+  </div>
+
+  <!-- Menu Mobile -->
+  <div id="mobile-menu" class="hidden mt-4 md:hidden flex-col space-y-2 text-[#182946]">
+    <a href="#services" class="block hover:underline">Layanan</a>
+    <a href="#order" class="block hover:underline">Pesan Cetak</a>
+    <a href="#contact" class="block hover:underline">Kontak</a>
+  </div>
+</header>
   <section class="hero">
     <h2>Efisien Terpercaya Fleksibel Solutif</h2>
     <p>Menyediakan layanan cetak berkualitas tinggi dengan harga terjangkau. Mulai cetak apapun yang Anda butuhkan dengan mudah dan cepat.</p>
