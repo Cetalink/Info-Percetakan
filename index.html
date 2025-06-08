@@ -3,16 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Satu Link Untuk Semua Kebutuhan Cetak. Layanan cetak offset, digital dan custom desain." />
   <title>Cetalink</title>
-  <script>
-    tailwind.config = {
-    darkMode: 'class',
-  }
-  </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="cetalink.css" />
-  <link rel="icon" href="favicon.ico" />
   <style>
     @keyframes fadeSlideUp {
       from {
@@ -45,20 +38,7 @@
         transform: translateY(0);
       }
     }
-    .modal-fade {
-    animation: fadeIn 0.3s ease-out forwards;
-    }
 
-    @keyframes fadeIn {
-    from {
-    opacity: 0;
-    transform: scale(0.95);
-    }
-    to {
-    opacity: 1;
-    transform: scale(1);
-    }
-    
     .drawer-link-anim {
       opacity: 0;
       animation: fadeInUp 0.4s ease-out forwards;
@@ -81,55 +61,33 @@
     .btn-utama:hover {
       background-color: #ff6b6b;
       box-shadow: 0 8px 20px rgba(255, 82, 82, 0.7);
-    }
-    
-    .animate-card-visible {
-    opacity: 1;
-    transform: translateY(0);
-    transition: all 0.8s ease-out;
-    }
-    
-    #drawer {
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    }
-    
-    #backdrop {
-    transition: opacity 0.3s ease;
-    }
 
+    }
   </style>
-  </head>
-  
-<body class="flex flex-col min-h-screen scroll-smooth dark:bg-gray-900 dark:text-white transition-colors duration-300">
+</head>
+<body class="flex flex-col min-h-screen">
 
 <header class="bg-white shadow-md px-6 py-4">
   <div class="flex items-center justify-between">
     <div class="flex items-center space-x-4">
       <img src="LOGO OKE + TULISAN-02.png" alt="Company Logo" class="h-12 w-auto" />
-        <h1 class="text-[#182946] font-bold text-lg sm:text-xl">Satu Link Untuk Semua Kebutuhan Cetak</h1>
-          <button onclick="document.documentElement.classList.toggle('dark')" aria-label="Toggle dark mode" class="text-xl">
-             🌓
-              </button>
-
+      <h1 class="text-[#182946] font-bold text-lg sm:text-xl">Satu Link Untuk Semua Kebutuhan Cetak</h1>
     </div>
     <nav class="hidden md:flex space-x-6 text-[#e65b5b]">
       <a href="#services" class="hover:underline">Layanan</a>
       <a href="#order" class="hover:underline">Pesan Cetak</a>
       <a href="#contact" class="hover:underline">Kontak</a>
     </nav>
-    
-    <button id="drawer-toggle" class="md:hidden text-[#e65b5b] focus:outline-none" aria-label="Menu">
-
+    <button id="drawer-toggle" class="md:hidden text-[#e65b5b] focus:outline-none">
       <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        
         <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
       </svg>
     </button>
   </div>
 
   <!-- Mobile Drawer -->
-  <div id="drawer" class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform translate-x-full opacity-0 transition-transform duration-300 z-50">
-  <div class="p-6 flex flex-col space-y-4 text-[#182946]">
+  <div id="drawer" class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform translate-x-full transition-transform duration-300 z-50">
+    <div class="p-6 flex flex-col space-y-4 text-white">
       <button id="drawer-close" class="self-end text-2xl text-[#e65b5b] hover:text-red-600 transition duration-300">&times;</button>
       <a href="#services" class="drawer-link-anim drawer-delay-1 bg-blue-600 px-4 py-2 rounded-md hover:bg-blue-700 transition duration-300">Layanan</a>
       <a href="#order" class="drawer-link-anim drawer-delay-2 bg-blue-600 px-4 py-2 rounded-md hover:bg-blue-700 transition duration-300">Pesan Cetak</a>
@@ -138,7 +96,7 @@
   </div>
 
   <!-- Backdrop -->
-  <div id="backdrop" class="fixed inset-0 bg-black bg-opacity-50 hidden z-40" aria hidden="true"></div
+  <div id="backdrop" class="fixed inset-0 bg-black bg-opacity-50 hidden z-40"></div>
 </header>
 
 <section class="hero px-6 py-12 text-center">
@@ -157,7 +115,7 @@
       </div>
       <div class="flex-1">
         <h4 class="font-semibold text-lg mb-2">Cetak Offset</h4>
-        <p class="text-sm text-gray-700 dark:text-gray-300">Cetalink melayani cetak offset untuk berbagai kebutuhan bisnis dari brosur, katalog, kemasan, hingga kop surat dan nota.</p>
+        <p class="text-sm text-gray-700">Cetalink melayani cetak offset untuk berbagai kebutuhan bisnis dari brosur, katalog, kemasan, hingga kop surat dan nota.</p>
       </div>
     </div>
 
@@ -168,7 +126,7 @@
       </div>
       <div class="flex-1">
         <h4 class="font-semibold text-lg mb-2">Cetak Digital</h4>
-        <p class="text-sm text-gray-700 dark:text-gray-300">Cetak cepat dan ekonomis untuk kebutuhan jumlah kecil seperti undangan, poster, dan kartu nama.</p>
+        <p class="text-sm text-gray-700">Cetak cepat dan ekonomis untuk kebutuhan jumlah kecil seperti undangan, poster, dan kartu nama.</p>
       </div>
     </div>
 
@@ -179,7 +137,7 @@
       </div>
       <div class="flex-1">
         <h4 class="font-semibold text-lg mb-2">Design Custom</h4>
-        <p class="text-sm text-gray-700 dark:text-gray-300">Layanan desain kreatif untuk mendukung cetakan Anda agar tampil menarik dan profesional.</p>
+        <p class="text-sm text-gray-700">Layanan desain kreatif untuk mendukung cetakan Anda agar tampil menarik dan profesional.</p>
       </div>
     </div>
   </div>
@@ -215,11 +173,10 @@
     <a href="https://wa.me/6282113788660" class="btn-utama w-full sm:w-auto text-center">KONSULTASI PESANAN</a>
   </div>
 </section>
-  
-  <div id="pesanModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+
+<div id="pesanModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
   <div class="bg-white text-[#182946] rounded-xl shadow-lg w-full max-w-md p-6 text-center">
     <h3 class="text-2xl font-bold mb-2">Mulai Pesan Cetak Anda</h3>
-    <p id="modalDesc" class="sr-only">Konten modal untuk pemesanan dan konsultasi cetak</p>
     <p class="mb-6">Hubungi kami untuk konsultasi dan pemesanan.</p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center mt-8 sm:mt-6 mb-12 sm:mb-6">
       <a href="mailto:infocetalink@gmail.com" class="btn-utama text-center">Kirim Email Pesanan</a>
@@ -235,13 +192,11 @@
 
 <script>
   function openModal() {
-    document.getElementById("pesanModal").classList.remove("hidden")
-    document.body.classList.add('overflow-hidden');
+    document.getElementById("pesanModal").classList.remove("hidden");
   }
 
   function closeModal() {
-    document.getElementById("pesanModal").classList.add("hidden")
-    document.body.classList.remove('overflow-hidden');
+    document.getElementById("pesanModal").classList.add("hidden");
   }
 
   const drawerToggle = document.getElementById('drawer-toggle');
@@ -269,26 +224,6 @@
     drawer.classList.add('translate-x-full');
     backdrop.classList.add('hidden');
   });
-
-  const cards = document.querySelectorAll('.animate-card');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-    if (entry.isIntersecting) {
-        entry.target.classList.add('animate-card-visible');
-      }
-    });
-  }, {
-    threshold: 0.2
-  });
-    cards.forEach(card => {
-    observer.observe(card);
-  });
-  document.querySelectorAll('.drawer-link-anim').forEach(el => {
-    el.classList.remove('drawer-link-anim'); // reset animasi
-    void el.offsetWidth; // force reflow
-    el.classList.add('drawer-link-anim'); // trigger animasi ulang
-  });
 </script>
 </body>
 </html>
-
