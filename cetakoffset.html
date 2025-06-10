@@ -1,41 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Folder cetak offset</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Produk Cetak Offset</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- AOS (Animate On Scroll) CSS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 </head>
-<body class="bg-gray-100 flex items-none justify-center min-h-screen">
-  <div class="bg-white max-w-6xl w-full rounded-3xl shadow-2xl p-10">
-    <h1 class="text-5xl font-extrabold text-[#182946] mb-10 text-center">Produk Cetak Offset</h1>
-    <p class="text-center text-gray-700 mb-10 text-lg max-w-3xl mx-auto">
-    </p>
-     <!-- Folder Card 1 -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div class="flex flex-col items-center space-y-5">
+<body class="bg-gray-100 min-h-screen flex flex-col items-center py-10 px-4">
+  <h1 class="text-5xl font-extrabold text-[#182946] mb-6 text-center" data-aos="fade-down" data-aos-delay="200">
+    Produk Cetak Offset
+  </h1>
+  <p class="text-center text-gray-700 mb-10 text-lg max-w-3xl" data-aos="fade-up" data-aos-delay="400">
+    Kami menyediakan berbagai produk cetak offset berkualitas seperti brosur, katalog, dan kemasan softbox.
+  </p>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-6xl">
+    <!-- Card 1 -->
+    <div class="flex justify-center items-center" data-aos="fade-up" data-aos-delay="600">
+      <div class="bg-white rounded-lg shadow-2xl p-4 transition duration-500 ease-in-out transform hover:scale-105">
         <img
           src="SAMPLE BROSUR POST ON WEB.jpg"
           alt="Cetak Brosur"
-          class="rounded-xl shadow-lg w-full h-22 object-cover"
+          class="w-full h-auto rounded-md object-contain transition duration-500 ease-in-out transform hover:scale-105"
         />
       </div>
-        <!-- Folder Card 2 -->
-      <div class="flex flex-col items-center space-y-5">
+    </div>
+
+    <!-- Card 2 -->
+    <div class="flex justify-center items-center" data-aos="fade-up" data-aos-delay="800">
+      <div class="bg-white rounded-lg shadow-2xl p-4 transition duration-500 ease-in-out transform hover:scale-105">
         <img
-        src="SAMPLE KATALOG POST ON WEB.jpg"
-          alt="Cetak Poster"
-          class="rounded-xl shadow-lg w-full h-22 object-cover"
+          src="SAMPLE KATALOG POST ON WEB.jpg"
+          alt="Cetak Katalog"
+          class="w-full h-auto rounded-md object-contain transition duration-500 ease-in-out transform hover:scale-105"
         />
       </div>
-      <!-- Folder Card 3 -->
-      <div class="flex flex-col items-center space-y-5">
+    </div>
+
+    <!-- Card 3 -->
+    <div class="flex justify-center items-center" data-aos="fade-up" data-aos-delay="1000">
+      <div class="bg-white rounded-lg shadow-2xl p-4 transition duration-500 ease-in-out transform hover:scale-105">
         <img
-        src="SOFTBOX POST ON WEB.jpg"
-          alt="Cetak Poster"
-          class="rounded-xl shadow-lg w-full h-22 object-cover"
+          src="SOFTBOX POST ON WEB.jpg"
+          alt="Cetak Softbox"
+          class="w-full h-auto rounded-md object-contain transition duration-500 ease-in-out transform hover:scale-105"
         />
+      </div>
     </div>
   </div>
+
+  <!-- AOS Script -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 </html>
