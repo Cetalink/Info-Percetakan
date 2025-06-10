@@ -3,19 +3,18 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main
+      - main  # deploy hanya saat push ke main
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+concurrency:
+  group: pages-deploy
+  cancel-in-progress: true  # hentikan job sebelumnya jika ada push baru
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout Repository
         uses: actions/checkout@v3
 
       - name: Setup Node.js
@@ -23,10 +22,10 @@ jobs:
         with:
           node-version: 18
 
-      - name: Install dependencies
+      - name: Install Dependencies
         run: npm install
 
-      - name: Build Tailwind
+      - name: Build Tailwind CSS
         run: npx tailwindcss -i ./src/input.css -o ./public/cetalink.css --minify
 
       - name: Deploy to GitHub Pages
@@ -34,5 +33,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
-          publish_branch: gh-pages
 
