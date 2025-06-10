@@ -7,7 +7,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- AOS (Animate On Scroll) CSS -->
-  <link rel="preload" href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
 
   <style>
     .gallery::-webkit-scrollbar {
@@ -26,35 +26,24 @@
       Jelajahi berbagai contoh gambar custom percetakan dengan kualitas terbaik dan desain menarik.
     </p>
   </header>
-<section class="gallery grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
-  <!-- Card 1 -->
-  <div class="flex justify-center items-center bg-white shadow-md transform hover:scale-105 transition-transform duration-300" data-aos="fade-up" data-aos-delay="200">
-    <img 
-      src="BOTTLE TUMBLER.jpg" 
-      alt="Cetak Bottle Tumblr" 
-      class="w-full h-full object-cover"
-    />
-  </div>
 
-  <!-- Card 2 -->
-  <div class="flex justify-center items-center bg-white shadow-md transform hover:scale-105 transition-transform duration-300" data-aos="fade-up" data-aos-delay="400">
-    <img 
-      src="CLOTHING & APPAREL.jpg" 
-      alt="Cetak Kaos" 
-      class="w-full h-full object-cover"
-    />
-  </div>
+  <section class="gallery grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-7xl mx-auto">
+    <!-- Card 1 -->
+    <div class="bg-white rounded-2xl shadow-md p-4 flex items-center justify-center transform hover:scale-105 transition-transform duration-300" data-aos="fade-up" data-aos-delay="200">
+      <img src="BOTTLE TUMBLER.jpg" alt="Cetak Bottle Tumblr" class="max-w-full max-h-72 object-contain" />
+    </div>
 
-  <!-- Card 3 -->
-  <div class="flex justify-center items-center bg-white shadow-md transform hover:scale-105 transition-transform duration-300" data-aos="fade-up" data-aos-delay="600">
-    <img 
-      src="ID CARD + LANYARD.jpg" 
-      alt="Custom Id Card" 
-      class="w-full h-full object-cover"
-    />
-  </div>
-</section>
-  
+    <!-- Card 2 -->
+    <div class="bg-white rounded-2xl shadow-md p-4 flex items-center justify-center transform hover:scale-105 transition-transform duration-300" data-aos="fade-up" data-aos-delay="400">
+      <img src="CLOTHING & APPAREL.jpg" alt="Cetak Kaos" class="max-w-full max-h-72 object-contain" />
+    </div>
+
+    <!-- Card 3 -->
+    <div class="bg-white rounded-2xl shadow-md p-4 flex items-center justify-center transform hover:scale-105 transition-transform duration-300" data-aos="fade-up" data-aos-delay="600">
+      <img src="ID CARD + LANYARD.jpg" alt="Custom ID Card" class="max-w-full max-h-72 object-contain" />
+    </div>
+  </section>
+
   <!-- AOS Script -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
